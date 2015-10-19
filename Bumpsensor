@@ -1,0 +1,19 @@
+int buttonState=0;
+#define buttonPin 3
+
+void setup()    
+{
+    pinMode(buttonPin, INPUT);
+    Serial.begin(9600);
+    delay(25);
+}
+
+void loop()
+{
+    // read the state of the pushbutton value:
+    buttonState = digitalRead(buttonPin);
+    if (buttonState == HIGH) 
+        Serial.println("button pressed");
+    else 
+        Serial.println("not pressed");
+}
